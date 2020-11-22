@@ -1,56 +1,49 @@
 import React from "react";
-import { Box, Button, Text } from "grommet";
-import { Clone, Book } from "grommet-icons";
-import { ReactComponent as Logo } from "../assets/logo.svg";
+import { Box, Text } from "grommet";
+import Header from "../components/Header";
 
-function Home(props) {
+function Embed(props) {
   return (
-    <Box align="center" justify="center" background="dark" pad="large" fill>
-      <Logo />
-      <Text
-        style={{
-          fontWeight: 900,
-          fontStyle: "italic",
-          letterSpacing: "-3px",
-          textAlign: "center",
-          padding: "3rem",
-        }}
-        size="144px"
-      >
-        explicitech
-      </Text>
-      {/* <Text
-        style={{
-          fontWeight: 300,
-          letterSpacing: "1px",
-          textAlign: "center",
-        }}
-        size="30px"
-      >
-        legal jargon, explained
-      </Text> */}
-      <Box direction="row">
-        <Button
-          primary
-          color="light"
-          label="learn"
-          margin="medium"
-          size="large"
-          style={{ fontWeight: 700, fontSize: "34px" }}
-          icon={<Book />}
-        />
-        <Button
-          secondary
-          color="light"
-          label="embed"
-          margin="medium"
-          size="large"
-          style={{ fontWeight: 700, fontSize: "34px" }}
-          icon={<Clone />}
-        />
+    <Box fill>
+      <Header />
+      <Box background="dark" pad="small" fill>
+        <Box style={{ paddingLeft: "3rem" }}>
+          <Text
+            style={{
+              fontWeight: 900,
+              letterSpacing: "-1px",
+              paddingTop: "0.5rem",
+            }}
+            size="60px"
+          >
+            Embed
+          </Text>
+          <Text
+            style={{
+              fontWeight: 700,
+              letterSpacing: "-1px",
+              paddingTop: "3rem",
+            }}
+            size="40px"
+          >
+            Common symbols — Terms & Conditions
+          </Text>
+          <Box style={{ paddingTop: "0.8rem" }}>x</Box>
+          <Text
+            style={{
+              fontWeight: 700,
+              letterSpacing: "-1px",
+              paddingTop: "3rem",
+            }}
+            size="40px"
+          >
+            Common symbols — Privacy Policy
+          </Text>
+          <Box style={{ paddingTop: "0.8rem" }}>x</Box>
+        </Box>
       </Box>
     </Box>
   );
 }
 
-export default Home;
+export default Embed;
