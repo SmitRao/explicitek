@@ -2,8 +2,10 @@ import React from "react";
 import { Box, Button, Text } from "grommet";
 import { Clone, Book } from "grommet-icons";
 import { ReactComponent as Logo } from "../assets/logo.svg";
+import { useHistory } from "react-router-dom";
 
 function Home(props) {
+  let history = useHistory();
   return (
     <Box align="center" justify="center" background="dark" pad="large" fill>
       <Logo />
@@ -19,16 +21,6 @@ function Home(props) {
       >
         explicitech
       </Text>
-      {/* <Text
-        style={{
-          fontWeight: 300,
-          letterSpacing: "1px",
-          textAlign: "center",
-        }}
-        size="30px"
-      >
-        legal jargon, explained
-      </Text> */}
       <Box direction="row">
         <Button
           primary
@@ -38,6 +30,7 @@ function Home(props) {
           size="large"
           style={{ fontWeight: 700, fontSize: "34px" }}
           icon={<Book />}
+          onClick={() => history.push('/learn')}
         />
         <Button
           secondary
@@ -47,6 +40,7 @@ function Home(props) {
           size="large"
           style={{ fontWeight: 700, fontSize: "34px" }}
           icon={<Clone />}
+          onClick={() => history.push('/embed')}
         />
       </Box>
     </Box>
