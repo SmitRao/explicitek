@@ -17,7 +17,7 @@ function Home(props) {
           textAlign: "center",
           padding: "3rem",
         }}
-        size="144px"
+        size="120px"
       >
         explicitech
       </Text>
