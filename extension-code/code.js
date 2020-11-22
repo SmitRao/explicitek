@@ -2,23 +2,28 @@
 let div = document.createElement('div');
 // let pageContent = document.getElementsByTagName("body")[0].innerHTML
 // let startOfPrivacyPolicy = pageContent.indexOf("Privacy")
+let cases = ["placeholder", "placeholder", "placeholder"]
 
+let hardcodedWebsites =["https://www.facebook.com/policy.php", "https://twitter.com/en/privacy", "https://stackoverflow.com/legal/privacy-policy" ]
+let currentWebsite = window.location.origin + window.location.pathname;
+let content = [["What is collected: Everything you share with the service", "Who is it shared with: Affiliated Third Parties", "All user generated content is owned by the user"], ["What is collected: Everything you share with the service", "Who is it shared with: Affiliated Third Parties", "All user generated content is owned by the user"], ["What is collected: Everything you put on the site is collected", "Who is it shared with: Shared with numerous third parties", "Ownership of user created content is under the creative commons license."]]
 
-let hardcodedWebsites =["https://www.facebook.com/policy.php", "https://twitter.com/en/privacy", "https://www.kaggle.com/privacy" ]
-cases = ["placeholder", "placeholder", "placeholder"]
+if (hardcodedWebsites.indexOf(currentWebsite) != -1){
+  cases = content[hardcodedWebsites.indexOf(currentWebsite)]
 
+// console.log(currentWebsite)
 let stuff =["<image src='" + chrome.extension.getURL("what.png") + "' width='20px'></image> " + cases[0],
- "<image src='" + chrome.extension.getURL("who.png") +"' width='20px'></image>" + cases[1],
- "<image src='" + chrome.extension.getURL("own.svg") +"' width='20px'></image>" + cases[2]]
+"<image src='" + chrome.extension.getURL("who.png") +"' width='20px'></image>" + cases[1],
+"<image src='" + chrome.extension.getURL("own.svg") +"' width='20px'></image>" + cases[2]]
 
 
 let categ = []
 for(let i = 0; i < 3; i++){
-  let row = document.createElement('div');
-  row.innerHTML = stuff[i]
-  row.style["font-family"] = "'Muli', sans-serif";
-  row.style.color = "#7a7c7f";
-  categ.push(row)
+ let row = document.createElement('div');
+ row.innerHTML = stuff[i]
+ row.style["font-family"] = "'Muli', sans-serif";
+ row.style.color = "#7a7c7f";
+ categ.push(row)
 }
 
 let title = document.createElement('div');
@@ -29,7 +34,7 @@ div.style.padding = "4px"
 
 div.appendChild(title);
 for(let i = 0; i < 3; i++){
-  div.appendChild(categ[i]);
+ div.appendChild(categ[i]);
 }
 
 
@@ -48,5 +53,4 @@ div.style.background =  "#F1EEF1;"
 div.style.opacity = "1; !important"
 div.style.filter = "alpha(opacity=100) !important"
 document.getElementsByTagName("body")[0].insertBefore(div,document.getElementsByTagName("body")[0].firstChild);
-
-
+}
