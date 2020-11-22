@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "Show rating of privacy policies",
+  "version": "0.1.0",
+  "description": "This extension will, on pages with privacy policies add an AI summation of the privacy policy ",
+  "web_accessible_resources": [
+    "what.png", "who.png", "own.svg"
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [{
+    "js": ["code.js"],
+    "matches": ["<all_urls>"]
+  }]
+ 
+}
