@@ -20,26 +20,35 @@ function Embed(props) {
           </Text>
           <Text
             style={{
-              fontWeight: 700,
-              letterSpacing: "-1px",
+              fontWeight: 400,
               paddingTop: "3rem",
             }}
             size="40px"
           >
-            Common symbols — Terms & Conditions
+            Embed the following tags into your headers in index.html to display
+            jargon symbols:
           </Text>
-          <Box style={{ paddingTop: "0.8rem" }}>x</Box>
-          <Text
-            style={{
-              fontWeight: 700,
-              letterSpacing: "-1px",
-              paddingTop: "3rem",
-            }}
-            size="40px"
-          >
-            Common symbols — Privacy Policy
-          </Text>
-          <Box style={{ paddingTop: "0.8rem" }}>x</Box>
+          <Box align="center" justify="center">
+            <Text
+              style={{
+                fontWeight: 700,
+                fontFamily: "monospace",
+                paddingTop: "3rem",
+              }}
+              size="40px"
+            >
+              {`
+                <script
+                async
+                src="https://explici.tech/explicitech-tooltip.js"
+                ></script>
+              `}
+              <br /> <br />
+              {`
+                <explicitech-tooltip id="example-af8f79af786s6r3i7"></explicitech-tooltip>
+              `}
+            </Text>
+          </Box>
         </Box>
       </Box>
     </Box>
